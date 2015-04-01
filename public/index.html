@@ -118,7 +118,7 @@
 				 	}
 				});
 				
-				socket.on('play/pause', function(data){
+				socket.on('volume', function(data){
 				 	new_volume = data.volume;
 				 	console.log('volume- '+new_volume);
 				 	player.setVolume(new_volume);
