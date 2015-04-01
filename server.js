@@ -1,10 +1,13 @@
 var express = require('express');
 var app = express();
+
+//change for heroku
+var port_number = server.listen(process.env.PORT || 3000);
+
+
 //var io = require('socket.io').listen(app.listen(3000));
-var io = require('socket.io').listen(app.listen(process.env.PORT || 3000, function(){
-  	console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-  });
-);
+
+var io = require('socket.io').listen(app.listen(port_number));
 
 
 
