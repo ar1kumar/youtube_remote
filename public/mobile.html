@@ -102,9 +102,17 @@
 		$("#volume").bind("slider:changed", function (event, data) {
 		  // The currently selected value of the slider
 		  console.log(data.value);
-		
+		  var volume = Math.round(data.value*100)
+		  
+		  data = {
+					roomId : roomId,
+					action : 'volume',
+					volume : volume
+				}
+				socket.emit('volume', data);
+		  
 		  // The value as a ratio of the slider (between 0 and 1)
-		  console.log(data.ratio);
+		  //console.log(data.ratio);
 		});
 	}
 	

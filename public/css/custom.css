@@ -40,6 +40,10 @@ html,body{
 	width: 90%;
 }
 
+#volume{
+	position: static;
+}
+
 #submit{
 	width: 5%;
 }

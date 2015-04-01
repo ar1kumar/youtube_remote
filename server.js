@@ -39,4 +39,10 @@ io.sockets.on('connection', function (socket) {
 		room = data.roomId;
 		socket.broadcast.to(room).emit('play/pause', data);
 	});
+	
+	socket.on('volume', function(data){
+		room = data.roomId;
+		socket.broadcast.to(room).emit('volume', data);
+	});
+	
 });
