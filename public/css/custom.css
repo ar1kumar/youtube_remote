@@ -12,3 +12,9 @@ html,body{
 	-webkit-background-size: cover;
 	background-size: cover;
 }
+
+.play{
+	background: url('../img/play.png')no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+}
