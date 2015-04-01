@@ -5,6 +5,11 @@ html,body{
 	width: 100%;
 }
 
+.clear_fix{
+	margin:  0 !important;
+	padding: 0 !important;
+}
+
 .container{
 	height: 100%;
 	width: 100%;
@@ -15,16 +20,7 @@ html,body{
 }
 
 .play{
-	    background: url('../img/play.png')no-repeat;
-  -webkit-background-size: 100% 100%;
-  background-size: 100% 100%;
-  width: 200px;
-  height: 200px;
-  outline: none;
-  border: none;
-  position: absolute;
-  left: 80px;
-  top: 100px;
+	    
 }
 
 .bars{
