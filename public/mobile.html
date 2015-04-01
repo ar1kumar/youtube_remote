@@ -59,8 +59,6 @@
 		fragments = url.split('/');
 		roomId = fragments[fragments.length - 1];
 		
-		//swipe count
-		//var swipes = 5;
 		
 		//join room
 		socket.emit('new_room', roomId);	

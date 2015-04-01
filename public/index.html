@@ -11,6 +11,7 @@
 </head>
 <body>
 	<div class="container">
+	<h2 id="link_bar"></h2>
 		<div class="bars">
 			<input type="text" name="video_name" placeholder="Enter video url" id="vid_link" /><button id="submit">GO!!</button>	
 		</div>
@@ -50,6 +51,7 @@
 		
 			//url for mobile generated
 			console.log('mobile-link- '+baseURL+'mobile/'+roomId);
+			$('#link_bar').html('Remote URL- '+baseURL+'mobile/'+roomId)
 			
 			/* embed video from input link */
 			$('#submit').click(function(){

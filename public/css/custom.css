@@ -23,6 +23,12 @@ html,body{
 	    
 }
 
+#link_bar{
+	width: 40%;
+	position: absolute;
+	left: 30%;
+}
+
 .bars{
 	  width: 50%;
   margin-left: 25%;
