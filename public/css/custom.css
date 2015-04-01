@@ -11,10 +11,17 @@ html,body{
 	background: url('../img/grad.jpg')no-repeat;
 	-webkit-background-size: cover;
 	background-size: cover;
+	position: relative;
 }
 
 .play{
-	background: url('../img/play.png')no-repeat;
-	-webkit-background-size: cover;
-	background-size: cover;
+	   background: url('../img/play.png')no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  width: 70%;
+  height: 35%;
+  outline: none;
+  border: none;
+  position: absolute;
+  margin-left: 15%;
 }
