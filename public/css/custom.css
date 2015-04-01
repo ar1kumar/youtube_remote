@@ -40,8 +40,8 @@ html,body{
 	width: 90%;
 }
 
-#volume{
-	position: static;
+.volume_cont{
+	position: relative;
 }
 
 #submit{
