@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Server - Youtube remote</title>
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="js/jquery.js"></script>
+	<link rel="stylesheet" href="css/custom.css" />
+	<!-- <script src="https://www.youtube.com/iframe_api"></script> -->
+</head>
+<body>
+	<div class="container">
+		<input type="text" name="video_name" placeholder="Enter video url" id="vid_link" /><button id="submit">GO!!</button>
+		<!-- <iframe src="" frameborder="0" class="video" id="video" allowfullscreen></iframe> -->
+		<div id="player"></div>
+	</div>
+	<script>
+			function randomString(len) {
+			    var chars = "1";
+			    var string_length = len;
+			    var randomstring = '';
+			    for (var i = 0; i < string_length; i++) {
+			        var rnum = Math.floor(Math.random() * chars.length);
+			        randomstring += chars.substring(rnum, rnum + 1);
+			    }
+			    return randomstring;
+			}
+
+	
+		$(document).ready(function(){
+			
+			var baseURL = "http://192.168.1.109:3000/"
+			var roomURL = baseURL+"mobile/"+roomId;	
+			var socket = io.connect(baseURL);
+			//var roomId = randomString(4);
+			var roomId = randomString(1);
+			      
+			//start a room
+			//generate url for mobile to join room
+			//restrict room for two clients
+			//listen for incoming actions
+			
+			
+			//room created
+			socket.emit('new_room', roomId);
+		
+			//url for mobile generated
+			console.log('mobile-link- '+baseURL+'mobile/'+roomId);
+			
+			/* embed video from input link */
+			$('#submit').click(function(){
+				get_vid = $('#vid_link').val();
+				//console.log(get_vid);
+				vid_id = extractVideoID(get_vid);
+				//$('.video').attr('src','https://www.youtube.com/embed/'+vid_id+'?autoplay=1&showinfo=0&rel=0&version=3&enablejsapi=1');
+				onYouTubeIframeAPIReady(vid_id);
+			})
+				
+			/* Get video id from entered url	 */
+			function extractVideoID(url){
+			    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+			    var match = url.match(regExp);
+			    if ( match && match[7].length == 11 ){
+			        return match[7];
+			    }else{
+			        alert("Could not extract video ID.");
+			    }
+			}
+				
+			function control(){
+			 	socket.emit('play/pause', data);
+			}
+			 
+				// 2. This code loads the IFrame Player API code asynchronously.
+			      var tag = document.createElement('script');
+			
+			      tag.src = "https://www.youtube.com/iframe_api";
+			      var firstScriptTag = document.getElementsByTagName('script')[0];
+			      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+			
+			      // 3. This function creates an <iframe> (and YouTube player)
+			      //    after the API code downloads.
+			      var player;
+			      function onYouTubeIframeAPIReady(url) {
+			        player = new YT.Player('player', {
+			          height: '390',
+			          width: '640'
+			       /* videoId: url,
+			       	  events: {
+			            'onReady': onPlayerReady
+			            'onStateChange': onPlayerStateChange
+			          }
+			       */
+			        });
+			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?autoplay=1&showinfo=0&rel=0&autoplay=1&version=3&enablejsapi=1');
+			      }
+			      
+			      // 4. The API will call this function when the video player is ready.
+			      function onPlayerReady(event) {
+			        event.target.playVideo();
+			      }
+		
+			      socket.on('play/pause', function(data){
+				 	//alert('reaction');
+				 	control = data.action;
+				 	//alert(control);
+				 	if(control == 'pause'){
+					 	player.pauseVideo();
+				 	}else if(control == 'play'){
+					 	player.playVideo();
+
+				 	}
+				});
+		
+			})
+	
+	</script>	
+
+</body>
+</html>
