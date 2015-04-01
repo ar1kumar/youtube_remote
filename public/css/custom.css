@@ -15,15 +15,16 @@ html,body{
 }
 
 .play{
-	   background: url('../img/play.png')no-repeat;
+	    background: url('../img/play.png')no-repeat;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
-  width: 70%;
-  height: 35%;
+  width: 200px;
+  height: 200px;
   outline: none;
   border: none;
   position: absolute;
-  margin-left: 15%;
+  left: 80px;
+  top: 100px;
 }
 
 .bars{
