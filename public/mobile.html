@@ -74,7 +74,8 @@
 					roomId : roomId,
 					action : 'pause'
 				}
-				socket.emit('play/pause', data);	
+				socket.emit('play/pause', data);
+				$('#click').css('-webkit-filter', 'invert(100%)'); 	
 				play = false;	
 			}else if(!play){
 				data = {
@@ -82,6 +83,7 @@
 					action : 'play'
 				}
 				socket.emit('play/pause', data);	
+				$('#click').css('-webkit-filter', 'invert(0%)'); 	
 				play = true;	
 			}
 			
