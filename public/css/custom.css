@@ -24,9 +24,9 @@ html,body{
 }
 
 #link_bar{
-	width: 40%;
-	position: absolute;
-	left: 30%;
+	  width: 60%;
+  position: absolute;
+  left: 25%;
 }
 
 .bars{

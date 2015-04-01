@@ -12,6 +12,11 @@
 <script src="../js/jquery.js"></script>
 <link rel="stylesheet" href="../css/custom.css" />
 
+
+<!-- Include Simple Slider JavaScript and CSS -->
+<script src="../lib/slider/js/simple-slider.js"></script>
+<link href="../lib/slider/js/simple-slider.css" rel="stylesheet" type="text/css" />
+
 <!-- unsemantic framework assets - code RA14 -->
 <!-- unsemantic framework -->
 <!--[if lt IE 9]>
@@ -40,8 +45,11 @@
 <div id='container' class="container mobile-grid-100 clear_fix">
 
 	<!-- <button id="click" class="play"></button> -->
-	<img src="../img/play.png" alt="" id="click" class="click mobile-grid-40 prefix-30" />
- 
+	<img src="../img/play.png" alt="" id="click" class="click mobile-grid-40 mobile-prefix-30" />
+
+	<!-- Activate Simple Slider on your input -->
+	<input type="text" data-slider="true" id="volume" class="mobile-grid-70 mobile-prefix-15">
+	
   <script src="/socket.io/socket.io.js"></script>
   
 </div>
@@ -50,6 +58,10 @@
 	<script>
 		
 	window.onload = function() {
+	
+		/* Start the volume slider plugin */
+		$("#volume").simpleSlider();
+
 		console.log('starts');
 		//var baseURL = "http://192.168.1.109:3000/"
 		var baseURL = "https://tranquil-inlet-8074.herokuapp.com/";
@@ -86,6 +98,14 @@
 			}
 			
 		})
+		
+		$("#volume").bind("slider:changed", function (event, data) {
+		  // The currently selected value of the slider
+		  console.log(data.value);
+		
+		  // The value as a ratio of the slider (between 0 and 1)
+		  console.log(data.ratio);
+		});
 	}
 	
 	
