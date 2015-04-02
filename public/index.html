@@ -8,15 +8,38 @@
 	<script src="js/jquery.js"></script>
 	<link rel="stylesheet" href="css/custom.css" />
 	<!-- <script src="https://www.youtube.com/iframe_api"></script> -->
+	<!-- unsemantic framework assets - code RA14 -->
+	<!-- unsemantic framework -->
+	<!--[if lt IE 9]>
+	  <script src="./assets/javascripts/html5.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="./assets/stylesheets/demo.css" />
+	<link rel="stylesheet" href="./assets/stylesheets/unsemantic-grid-base.css" />
+	<noscript>
+	  <link rel="stylesheet" href="./assets/stylesheets/unsemantic-grid-mobile.css" />
+	</noscript>
+	<script>
+	  var ADAPT_CONFIG = {
+	    path: './assets/stylesheets/',
+	    dynamic: true,
+	    range: [
+	      '0 to 767px = unsemantic-grid-mobile.css',
+	      '767px = unsemantic-grid-desktop.css'
+	    ]
+	  };
+	</script>
+	<script src="./assets/javascripts/adapt.min.js"></script>
+	<!-- Code RA14 ends here -->
+
 </head>
 <body>
 	<div class="container">
-	<h2 id="link_bar"></h2>
-		<div class="bars">
-			<input type="text" name="video_name" placeholder="Enter video url" id="vid_link" /><button id="submit">GO!!</button>	
+	<h2 id="link_bar" class="grid-60 prefix-20"></h2>
+		<div class="bars grid-100 clear_fix">
+			<input type="text" name="video_name" placeholder="Enter video url" id="vid_link" class="grid-65 prefix-15"/><button id="submit" class="grid-5">GO!!</button>	
 		</div>
 		<!-- <iframe src="" frameborder="0" class="video" id="video" allowfullscreen></iframe> -->
-		<div id="player"></div>
+		<div id="player" class="grid-60 prefix-20"></div>
 	</div>
 	<script>
 			function randomString(len) {
