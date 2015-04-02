@@ -19,7 +19,7 @@ app.get('/', function(req, res){
 
 
 //requests coming for mobile
-app.get('/mobile/:id', function(req, res){
+app.get('/m/:id', function(req, res){
    //console.log(req.params.id);
    res.sendfile(__dirname + '/public/mobile.html');
 });

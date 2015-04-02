@@ -43,6 +43,7 @@
 	</div>
 	<script>
 			function randomString(len) {
+			    //var chars = "1234567890abcdefghijklmnopqrstuvwxyz";
 			    var chars = "1";
 			    var string_length = len;
 			    var randomstring = '';
@@ -73,8 +74,8 @@
 			socket.emit('new_room', roomId);
 		
 			//url for mobile generated
-			console.log('mobile-link- '+baseURL+'mobile/'+roomId);
-			$('#link_bar').html('Remote URL- '+baseURL+'mobile/'+roomId)
+			console.log('mobile-link- '+baseURL+'m/'+roomId);
+			$('#link_bar').html('Remote URL- '+baseURL+'m/'+roomId)
 			
 			/* embed video from input link */
 			$('#submit').click(function(){
