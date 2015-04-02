@@ -141,20 +141,20 @@
 			      function onYouTubeIframeAPIReady(url,playlist) {
 			        player = new YT.Player('player', {
 			          height: '390',
-			          width: '640'
-			       /* videoId: url,
+			          width: '640',
+			       /* videoId: url, */
 			       	  events: {
 			            'onReady': onPlayerReady
-			            'onStateChange': onPlayerStateChange
+			            //'onStateChange': onPlayerStateChange
 			          }
-			       */
 			        });
-			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=1&showinfo=0&rel=0&autoplay=1&version=3&enablejsapi=1');
+			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=1&showinfo=0&rel=0&version=3&enablejsapi=1');
 			      }
 			      
 			      // 4. The API will call this function when the video player is ready.
 			      function onPlayerReady(event) {
-			        event.target.playVideo();
+			        //event.target.playVideo();
+			        //do whatever when the player is ready
 			      }
 		
 			      socket.on('play/pause', function(data){
