@@ -38,7 +38,10 @@ html,body{
 }
 
 .volume_cont{
-	position: relative;
+	
+}
+
+.vol_section{
 	margin-top: 10%;
 }
 
