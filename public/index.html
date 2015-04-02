@@ -49,7 +49,7 @@
 	
 	<h2 id="link_bar" class="grid-60 prefix-20"></h2>
 		<div class="bars grid-100 clear_fix">
-			<input type="text" name="video_name" placeholder="Enter video url" id="vid_link" class="grid-45 prefix-25"/><button id="submit" class="grid-5">GO!!</button>	
+			<input type="text" name="video_name" placeholder="Enter video or Playlist url" id="vid_link" class="grid-45 prefix-25"/><button id="submit" class="grid-5">GO!!</button>	
 		</div>
 		<!-- <iframe src="" frameborder="0" class="video" id="video" allowfullscreen></iframe> -->
 		<div id="player" class="grid-60 prefix-20"></div>
@@ -155,7 +155,7 @@
 			      var player;
 			      function onYouTubeIframeAPIReady(url,playlist) {
 			        player = new YT.Player('player', {
-			          height: '390',
+			          height: '350',
 			          width: '640',
 			       /* videoId: url, */
 			       	  events: {
@@ -163,7 +163,7 @@
 			            //'onStateChange': onPlayerStateChange
 			          }
 			        });
-			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=1&showinfo=0&rel=0&version=3&enablejsapi=1');
+			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=1&showinfo=0&rel=0&version=3&enablejsapi=1&controls=0');
 			      }
 			      
 			      // 4. The API will call this function when the video player is ready.
