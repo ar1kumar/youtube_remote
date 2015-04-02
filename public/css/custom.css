@@ -39,7 +39,7 @@ html,body{
 
 .volume_cont{
 	position: relative;
-	margin-top: 2%;
+	margin-top: 10%;
 }
 
 #submit{
@@ -56,7 +56,7 @@ html,body{
 
 /* player controls */
 .play_controls{
-	margin-top: 3%;
+	margin-top: 10%;
 }
 
 
