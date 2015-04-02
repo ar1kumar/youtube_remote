@@ -83,7 +83,7 @@
 					alert('Please enter a youtube link');
 				}else{
 					vid_id = extractVideoID(get_vid);	
-					onYouTubeIframeAPIReady(vid_id);
+					onYouTubeIframeAPIReady(vid_id[0],vid_id[1]);
 				}
 				//vid_id = extractVideoID(get_vid);
 				//onYouTubeIframeAPIReady(vid_id);
@@ -94,12 +94,33 @@
 			    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
 			    var match = url.match(regExp);
 			    if ( match && match[7].length == 11 ){
-			        return match[7];
+			        var playlist = youtube_playlist_parser(url);
+			        var video_id = match[7];
+			        return [video_id, playlist];
 			    }else{
-			        alert("Could not extract video ID.");
+			        alert("Could not get video.");
 			    }
 			}
-				
+			
+			//get playlist id from url
+		    function youtube_playlist_parser(url){
+			    var reg = new RegExp("[&?]list=([a-z0-9_]+)","i");
+		        var match = reg.exec(url);
+		
+		        if (match&&match[1].length>0&&youtube_validate(url)){
+		            return match[1];
+		        }else{
+		            return "nope";
+		        }
+		
+		    }    
+
+		  // validate if its a youtube URL
+		  function youtube_validate(url) {
+			  var regExp = /^(?:https?:\/\/)?(?:www\.)?youtube\.com(?:\S+)?$/;
+			  return url.match(regExp)&&url.match(regExp).length>0;
+		  }
+		    
 			function control(){
 			 	socket.emit('play/pause', data);
 			}
@@ -114,7 +135,7 @@
 			      // 3. This function creates an <iframe> (and YouTube player)
 			      //    after the API code downloads.
 			      var player;
-			      function onYouTubeIframeAPIReady(url) {
+			      function onYouTubeIframeAPIReady(url,playlist) {
 			        player = new YT.Player('player', {
 			          height: '390',
 			          width: '640'
