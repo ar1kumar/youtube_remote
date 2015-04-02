@@ -79,10 +79,14 @@
 			/* embed video from input link */
 			$('#submit').click(function(){
 				get_vid = $('#vid_link').val();
-				//console.log(get_vid);
-				vid_id = extractVideoID(get_vid);
-				//$('.video').attr('src','https://www.youtube.com/embed/'+vid_id+'?autoplay=1&showinfo=0&rel=0&version=3&enablejsapi=1');
-				onYouTubeIframeAPIReady(vid_id);
+				if(get_vid != "" || get_vid != null || get_vid != " "){
+					vid_id = extractVideoID(get_vid);	
+					onYouTubeIframeAPIReady(vid_id);
+				}else{
+					alert('Please enter a youtube link');
+				}
+				//vid_id = extractVideoID(get_vid);
+				//onYouTubeIframeAPIReady(vid_id);
 			})
 				
 			/* Get video id from entered url	 */
