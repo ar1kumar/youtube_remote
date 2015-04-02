@@ -54,7 +54,20 @@ html,body{
 
 #player{
 	  margin-top: 5%;
+	  background: url('../img/tv.png')no-repeat;
 }
+
+/* Living room */
+.side_objects{
+	margin-top: 5%;
+	position: absolute;
+}
+
+.bottom_object{
+	position: absolute;
+	bottom: 0;
+}
+
 
 
 /* player controls */
