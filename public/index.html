@@ -83,8 +83,9 @@
 					alert('Please enter a youtube link');
 				}else{
 					vid_id = extractVideoID(get_vid);	
-					console.log('video info 2 - '+vid_id[0]+'-::-'+vid_id[1])
+					console.log('video info 2 - '+vid_id[0]+'-::-'+vid_id[1]);
 					onYouTubeIframeAPIReady(vid_id[0],vid_id[1]);
+					console.log('click');
 				}
 				//vid_id = extractVideoID(get_vid);
 				//onYouTubeIframeAPIReady(vid_id);
@@ -148,7 +149,7 @@
 			          }
 			       */
 			        });
-			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'autoplay=1&showinfo=0&rel=0&autoplay=1&version=3&enablejsapi=1');
+			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=1&showinfo=0&rel=0&autoplay=1&version=3&enablejsapi=1');
 			      }
 			      
 			      // 4. The API will call this function when the video player is ready.
