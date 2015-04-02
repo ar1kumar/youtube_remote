@@ -42,7 +42,10 @@ html,body{
 }
 
 #submit{
-	width: 5%;
+	height: 30px;
+	background: slategrey;
+	font-size: 1.2em;
+	border: 1px solid black;
 }
 
 #player{
