@@ -69,7 +69,8 @@
 
 	
 		$(document).ready(function(){
-			
+			 var player;
+			 
 			//var baseURL = "http://192.168.1.109:3000/"
 			var baseURL = "https://leanback.herokuapp.com/";
 			var roomURL = baseURL+"mobile/"+roomId;	
@@ -152,7 +153,7 @@
 			
 			      // 3. This function creates an <iframe> (and YouTube player)
 			      //    after the API code downloads.
-			      var player;
+			     
 			      function onYouTubeIframeAPIReady(url,playlist) {
 			        player = new YT.Player('player', {
 			          height: '350',
