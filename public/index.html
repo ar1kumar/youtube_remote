@@ -79,11 +79,11 @@
 			/* embed video from input link */
 			$('#submit').click(function(){
 				get_vid = $('#vid_link').val();
-				if(get_vid != "" || get_vid != null || get_vid != " "){
+				if(get_vid == "" || get_vid == null || get_vid == " "){
+					alert('Please enter a youtube link');
+				}else{
 					vid_id = extractVideoID(get_vid);	
 					onYouTubeIframeAPIReady(vid_id);
-				}else{
-					alert('Please enter a youtube link');
 				}
 				//vid_id = extractVideoID(get_vid);
 				//onYouTubeIframeAPIReady(vid_id);
