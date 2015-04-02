@@ -83,6 +83,7 @@
 					alert('Please enter a youtube link');
 				}else{
 					vid_id = extractVideoID(get_vid);	
+					console.log('video info 2 - '+vid_id[0]+'-::-'+vid_id[1])
 					onYouTubeIframeAPIReady(vid_id[0],vid_id[1]);
 				}
 				//vid_id = extractVideoID(get_vid);
@@ -97,6 +98,7 @@
 			        var playlist = youtube_playlist_parser(url);
 			        var video_id = match[7];
 			        return [video_id, playlist];
+			        console.log('video info - '+video_id+'-::-'+playlist)
 			    }else{
 			        alert("Could not get video.");
 			    }
