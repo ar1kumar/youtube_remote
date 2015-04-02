@@ -110,7 +110,8 @@
 			    var reg = new RegExp("[&?]list=([a-z0-9_]+)","i");
 		        var match = reg.exec(url);
 		
-		        if (match&&match[1].length>0&&youtube_validate(url)){
+		        //if (match&&match[1].length>0&&youtube_validate(url)){
+		        if (match&&match[1].length>0){
 		            return match[1];
 		        }else{
 		            return "nope";
