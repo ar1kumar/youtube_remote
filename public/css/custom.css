@@ -55,7 +55,7 @@ html,body{
 }
 
 #player{
-	  margin-top: 5%;
+	  margin-top: 2%;
 	  /* background: url('../img/tv.png')no-repeat; */
 	  z-index: 5;
 	  position: relative;
