@@ -32,7 +32,9 @@ html,body{
 }
 
 #vid_link{
-	
+	background: lavenderblush;
+	  font-size: 1.2em;
+	  height: 30px;
 }
 
 .volume_cont{
