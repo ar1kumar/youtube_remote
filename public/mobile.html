@@ -45,9 +45,9 @@
 <div id='container' class="container mobile-grid-100 clear_fix">
 
 	<div class="play_controls mobile-grid-100">
-		<img src="../img/prev.png" alt="" id="prev" class="click mobile-grid-33 " />	
+		<img src="../img/prev.png" alt="" id="prev" class="click mobile-grid-33 action" />	
 		<img src="../img/play.png" alt="" id="click" class="click mobile-grid-33 " />	
-		<img src="../img/next.png" alt="" id="next" class="click mobile-grid-33 " />	
+		<img src="../img/next.png" alt="" id="next" class="click mobile-grid-33 action" />	
 	</div>
 
 	<!-- Activate Simple Slider on your input -->
@@ -101,6 +101,16 @@
 				play = true;	
 			}
 			
+		})
+		
+		//common function for all buttons - get button action
+		$('.action').click(function(){
+			resp = $(this).attr('id');
+			data = {
+				roomId : roomId,
+				action : resp
+			}
+			socket.emit('action', data);	
 		})
 		
 		$("#volume").bind("slider:changed", function (event, data) {

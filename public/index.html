@@ -157,7 +157,8 @@
 			        //event.target.playVideo();
 			        //do whatever when the player is ready
 			      }
-		
+			      
+			      //actions coming from remote URL
 			      socket.on('play/pause', function(data){
 				 	//alert('reaction');
 				 	control = data.action;
@@ -174,6 +175,15 @@
 				 	new_volume = data.volume;
 				 	console.log('volume- '+new_volume);
 				 	player.setVolume(new_volume);
+				});
+				
+				socket.on('reaction', function(data){
+				 	control = data.action;
+				 	if(control == 'next'){
+					 	player.nextVideo();
+				 	}else if(control == 'prev'){
+					 	player.previousVideo();
+					}
 				});
 		
 			})

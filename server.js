@@ -45,4 +45,9 @@ io.sockets.on('connection', function (socket) {
 		socket.broadcast.to(room).emit('volume', data);
 	});
 	
+	socket.on('action', function(data){
+		room = data.roomId;
+		socket.broadcast.to(room).emit('reaction', data);
+	});
+	
 });
