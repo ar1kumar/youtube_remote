@@ -24,23 +24,15 @@ html,body{
 }
 
 #link_bar{
-	  /*
-	  width: 60%;
-	  position: absolute;
-	  left: 25%;
-	  */
+	  margin-top: 2%;
 }
 
 .bars{
-	  /*
-	  width: 50%;
-	  margin-left: 25%;
-	  */
 	  margin-top: 5%;
 }
 
 #vid_link{
-	/* width: 90%; */
+	
 }
 
 .volume_cont{
@@ -53,7 +45,7 @@ html,body{
 
 #player{
 	  /* position: absolute; */
-	  margin-top: 10%;
+	  margin-top: 5%;
 	  /*
 	  margin-left: 20%;
 	  width: 60%;
