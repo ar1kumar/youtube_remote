@@ -54,7 +54,7 @@ html,body{
 
 #player{
 	  margin-top: 5%;
-	  background: url('../img/tv.png')no-repeat;
+	  /* background: url('../img/tv.png')no-repeat; */
 }
 
 /* Living room */
