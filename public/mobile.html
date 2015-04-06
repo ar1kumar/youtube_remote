@@ -148,7 +148,7 @@
 		$('.search_btn').click(function(){
 			var string = $('.search_bar').val();
 			$.ajax({
-				url:'../lib/search_vid.php',
+				url:'http://leanback.herokuapp.com/lib/search_vid.php',
 				method:'POST',
 				data:string,
 				sucess:function(){
