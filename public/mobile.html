@@ -173,7 +173,7 @@
 			},1000)
 		})
 		
-		$('ul li').on("click",function(){
+		$(document).on('click', 'ul li', function(e) { 
 			get_video = $(this).attr('id');
 			console.log(get_video+" -video ID");
 			data = {
@@ -181,7 +181,7 @@
 				video : get_video
 			}
 			socket.emit('update_video', data);	
-		})
+		});
 		
 	}
 	
