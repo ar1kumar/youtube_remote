@@ -174,9 +174,14 @@
 			});
 		})
 		
-		$('.vid_list').click(function(){
+		$('ul li').click(function(){
 			get_video = $(this).attr('id');
-			alert(get_video+" -video ID");
+			//alert(get_video+" -video ID");
+			data = {
+				roomId : roomId,
+				video : get_video
+			}
+			socket.emit('update_video', data);	
 		})
 		
 	}

@@ -200,6 +200,11 @@
 					 	player.previousVideo();
 					}
 				});
+				
+				socket.on('update_video', function(data){
+				 	new_video = data.video;
+				 	onYouTubeIframeAPIReady(new_video,"none");
+				});
 		
 			})
 	
