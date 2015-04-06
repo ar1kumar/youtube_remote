@@ -24,6 +24,14 @@ app.get('/m/:id', function(req, res){
    res.sendfile(__dirname + '/public/mobile.html');
 });
 
+
+//search request coming from ajax call
+app.get('/search', function(req, res){
+   //console.log(req.params.id);
+   res.sendfile(__dirname + '/public/lib/search_vid.php');
+});
+
+
 // handle rest of the requests
 app.use(express.static(__dirname + '/public'));
 
