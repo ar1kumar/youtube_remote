@@ -169,7 +169,7 @@
 					list.push(data.items[i].id.videoId)
 					thumb.push(data.items[i].snippet.thumbnails.medium.url)
 					title.push(data.items[i].snippet.title)
-					$('.results_list').append("<li><img src='"+thumb[i]+"' class='mobile-grid-50 vid_list' alt='' id='"+list[i]+"'/>"+title[i]+"</li>")
+					$('.results_list').append("<li class='mobile-grid-100'><img src='"+thumb[i]+"' class='mobile-grid-50 vid_list' alt='' id='"+list[i]+"'/>"+title[i]+"</li>")
 				}
 			});
 		})
