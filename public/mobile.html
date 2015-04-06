@@ -60,8 +60,11 @@
 	
 	<!-- Search option -->
 	<div class="search_section mobile-grid-100">
-		<input type="search" name="search" class="mobile-grid-80 mobile-prefix-10 search_bar"/>
+		<input type="search" name="search" class="mobile-grid-80 mobile-prefix-5 search_bar"/>
 		<button class="mobile-grid-10 search_btn">GO!!</button>
+	</div>
+	<div class="search_results mobile-grid-100">
+		
 	</div>
 	
 	
@@ -139,6 +142,22 @@
 		  // The value as a ratio of the slider (between 0 and 1)
 		  //console.log(data.ratio);
 		});
+		
+		
+		/* search for videos */
+		$('.search_btn').click(function(){
+			var string = $('.search_bar').val();
+			$.ajax({
+				url:'lib/search_vid.php',
+				method:'POST',
+				data:string,
+				sucess:function(){
+					//sucess part comes here
+					alert('success');
+				}
+			});
+		})
+		
 	}
 	
 	
