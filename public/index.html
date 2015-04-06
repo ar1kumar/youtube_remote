@@ -122,7 +122,7 @@
 			
 			//get playlist id from url
 		    function youtube_playlist_parser(url){
-			    var reg = new RegExp("[&?]list=([a-z0-9_]+)","i");
+			    var reg = new RegExp("[&?]list=([a-z0-9_-]+)","i");
 		        var match = reg.exec(url);
 		
 		        //if (match&&match[1].length>0&&youtube_validate(url)){
