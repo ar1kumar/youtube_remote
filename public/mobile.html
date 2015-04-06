@@ -151,31 +151,24 @@
 		
 		/* search for videos */
 		$('.search_btn').click(function(){
-			var string = $('.search_bar').val();
-			$('.results_list').html("");
-			/*
-			$.ajax({
-				url:'/search',
-				method:'POST',
-				data:string,
-				sucess:function(){
-					//sucess part comes here
-					alert('success');
-				}
-			});
-			*/
+
+			$('.results_list').empty();
 			
-			$.get( "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+string+"&type=video&videoDuration=short&videoCaption=any&key=AIzaSyBfGJ7nuAra9imWqN8q3UsHTWyiKvGLTdU&maxResults=50", function(data){
-				for(i=0;i<50;i++){
-					list.push(data.items[i].id.videoId)
-					thumb.push(data.items[i].snippet.thumbnails.medium.url)
-					title.push(data.items[i].snippet.title)
-					$('.results_list').append("<li class='vid_list mobile-grid-100 clear_fix' id='"+list[i]+"'><img src='"+thumb[i]+"' class='mobile-grid-50' alt=''/>"+title[i]+"</li>")
-				}
-			});
+			setTimeout(function(){
+				var string = $('.search_bar').val();
+
+				$.get( "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+string+"&type=video&videoDuration=short&videoCaption=any&key=AIzaSyBfGJ7nuAra9imWqN8q3UsHTWyiKvGLTdU&maxResults=50", function(data){
+					for(i=0;i<50;i++){
+						list.push(data.items[i].id.videoId)
+						thumb.push(data.items[i].snippet.thumbnails.medium.url)
+						title.push(data.items[i].snippet.title)
+						$('.results_list').append("<li class='vid_list mobile-grid-100 clear_fix' id='"+list[i]+"'><img src='"+thumb[i]+"' class='mobile-grid-50' alt=''/>"+title[i]+"</li>")
+					}
+				});
+			},2000)
 		})
 		
-		$('ul li').click(function(){
+		$('.vid_list').click(function(){
 			get_video = $(this).attr('id');
 			console.log(get_video+" -video ID");
 			data = {
