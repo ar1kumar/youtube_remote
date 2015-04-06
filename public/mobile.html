@@ -63,8 +63,10 @@
 		<input type="search" name="search" class="mobile-grid-80 mobile-prefix-5 search_bar"/>
 		<button class="mobile-grid-10 search_btn">GO!!</button>
 	</div>
-	<div class="search_results mobile-grid-100">
-		
+	<div class="search_results mobile-grid-100 clear_fix">
+		<ul class="results_list mobile-grid-100 clear_fix">
+			
+		</ul>
 	</div>
 	
 	
@@ -95,6 +97,9 @@
 		
 		//define variables
 		var play = true;
+		var list = new Array();
+		var thumb = new Array();
+		var title = new Array();
 		
 		$('#click').click(function(){
 			if(play){
@@ -147,6 +152,7 @@
 		/* search for videos */
 		$('.search_btn').click(function(){
 			var string = $('.search_bar').val();
+			/*
 			$.ajax({
 				url:'/search',
 				method:'POST',
@@ -156,6 +162,21 @@
 					alert('success');
 				}
 			});
+			*/
+			
+			$.get( "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+string+"&type=video&videoDuration=short&videoCaption=any&key=AIzaSyBfGJ7nuAra9imWqN8q3UsHTWyiKvGLTdU&maxResults=50", function(data){
+				for(i=0;i<50;i++){
+					list.push(data.items[i].id.videoId)
+					thumb.push(data.items[i].snippet.thumbnails.medium.url)
+					title.push(data.items[i].snippet.title)
+					$('.results_list').append("<li><img src='"+thumb[i]+"' class='mobile-grid-50 vid_list' alt='' id='"+list[i]+"'/>"+title[i]+"</li>")
+				}
+			});
+		})
+		
+		$('.vid_list').click(function(){
+			get_video = $(this).attr('id');
+			alert(get_video+" -video ID");
 		})
 		
 	}

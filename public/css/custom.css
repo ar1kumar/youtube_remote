@@ -101,4 +101,9 @@ html,body{
 	height: 30px;
 }
 
+.search_results{
+	height: 400px;
+	overflow-y: scroll;
+}
+
 

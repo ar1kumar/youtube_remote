@@ -13,22 +13,13 @@ var io = require('socket.io').listen(app.listen(process.env.PORT || 3000));
 
 //requests coming for desktop
 app.get('/', function(req, res){
-   //console.log(req.query.id);
    res.sendfile(__dirname + '/public/index.html');
 });
 
 
 //requests coming for mobile
 app.get('/m/:id', function(req, res){
-   //console.log(req.params.id);
    res.sendfile(__dirname + '/public/mobile.html');
-});
-
-
-//search request coming from ajax call
-app.get('/search', function(req, res){
-   //console.log(req.params.id);
-   res.sendfile(__dirname + '/public/lib/search_vid.php');
 });
 
 
