@@ -65,7 +65,7 @@
 	</div>
 	<div class="search_results mobile-grid-100 clear_fix">
 		<ul class="results_list mobile-grid-100 clear_fix">
-			<li class="vid_list"></li>
+			<li class="vid_list" id="dummy"></li>
 		</ul>
 	</div>
 	
@@ -173,7 +173,7 @@
 			},1000)
 		})
 		
-		$('.vid_list').click(function(){
+		$('ul li').click(function(){
 			get_video = $(this).attr('id');
 			console.log(get_video+" -video ID");
 			data = {
