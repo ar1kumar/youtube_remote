@@ -87,5 +87,14 @@ html,body{
 	margin-top: 10%;
 }
 
+.search_bar{
+	background: lavenderblush;
+	font-size: 1.2em;
+	height: 30px;
+}
+
+.search_btn{
+	margin-top: 3%;
+}
 
 
