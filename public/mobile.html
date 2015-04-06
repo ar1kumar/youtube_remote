@@ -173,7 +173,7 @@
 			},1000)
 		})
 		
-		$('ul li').live("click",function(){
+		$('ul li').on("click",function(){
 			get_video = $(this).attr('id');
 			console.log(get_video+" -video ID");
 			data = {
