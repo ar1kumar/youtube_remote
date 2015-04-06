@@ -97,9 +97,11 @@
 		
 		//define variables
 		var play = true;
+		/*
 		var list = new Array();
 		var thumb = new Array();
 		var title = new Array();
+*/
 		
 		$('#click').click(function(){
 			if(play){
@@ -153,6 +155,9 @@
 		$('.search_btn').click(function(){
 
 			$('.results_list').empty();
+			var list = new Array();
+			var thumb = new Array();
+			var title = new Array();
 			
 			setTimeout(function(){
 				var string = $('.search_bar').val();
@@ -165,7 +170,7 @@
 						$('.results_list').append("<li class='vid_list mobile-grid-100 clear_fix' id='"+list[i]+"'><img src='"+thumb[i]+"' class='mobile-grid-50' alt=''/>"+title[i]+"</li>")
 					}
 				});
-			},2000)
+			},1000)
 		})
 		
 		$('.vid_list').click(function(){
