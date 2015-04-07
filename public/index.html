@@ -159,13 +159,13 @@
 			        player = new YT.Player('player', {
 			          height: '350',
 			          width: '640',
-			       /* videoId: url, */
+			          videoId: url+'?list='+playlist+'&autoplay=0&showinfo=0&rel=0&version=3&enablejsapi=1&controls=0',
 			       	  events: {
 			            'onReady': onPlayerReady
 			            //'onStateChange': onPlayerStateChange
 			          }
 			        });
-			        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=0&showinfo=0&rel=0&version=3&enablejsapi=1&controls=0');
+			        /* $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=0&showinfo=0&rel=0&version=3&enablejsapi=1&controls=0'); */
 			      }
 			      
 			      // 4. The API will call this function when the video player is ready.
