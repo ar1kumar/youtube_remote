@@ -69,7 +69,6 @@
 
 	
 		$(document).ready(function(){
-			 var player;
 			 
 			//var baseURL = "http://192.168.1.109:3000/"
 			var baseURL = "https://leanback.herokuapp.com/";
@@ -140,11 +139,13 @@
 			  return url.match(regExp)&&url.match(regExp).length>0;
 		  }
 		    
+/*
 			function control(){
 			 	socket.emit('play/pause', data);
 			}
+*/
 			 
-				// 2. This code loads the IFrame Player API code asynchronously.
+				//2. This code loads the IFrame Player API code asynchronously.
 			      var tag = document.createElement('script');
 			
 			      tag.src = "https://www.youtube.com/iframe_api";
@@ -153,7 +154,7 @@
 			
 			      // 3. This function creates an <iframe> (and YouTube player)
 			      //    after the API code downloads.
-			     
+			      var player;
 			      function onYouTubeIframeAPIReady(url,playlist) {
 			        player = new YT.Player('player', {
 			          height: '350',
@@ -171,6 +172,7 @@
 			      function onPlayerReady(event) {
 			        //event.target.playVideo();
 			        //do whatever when the player is ready
+			        player.playVideo();
 			      }
 			      
 			      //actions coming from remote URL
