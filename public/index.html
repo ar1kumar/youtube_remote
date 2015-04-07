@@ -154,19 +154,24 @@
 			
 			      // 3. This function creates an <iframe> (and YouTube player)
 			      //    after the API code downloads.
-			      //var player;
+			      var player;
+			      var start = true;
 			      function onYouTubeIframeAPIReady(url,playlist) {
-			        player = new YT.Player('player', {
-			          height: '350',
-			          width: '640',
-			          videoId: url,
-			          playerVars: { 'list':playlist, 'autoplay': 0, 'controls': 0,'rel':0, 'showinfo':0, 'enablejsapi':1 },
-			          events: {
-			            'onReady': onPlayerReady
-			            //'onStateChange': onPlayerStateChange
-			          }
-			        });
-			        player.loadVideoById(url);
+			        if(start){
+					     player = new YT.Player('player', {
+				          height: '350',
+				          width: '640',
+				          videoId: url,
+				          playerVars: { 'list':playlist, 'autoplay': 0, 'controls': 0,'rel':0, 'showinfo':0, 'enablejsapi':1 },
+				          events: {
+				            'onReady': onPlayerReady
+				            //'onStateChange': onPlayerStateChange
+				          }
+				        });   
+				        start = false;
+			        }else{
+				     	player.loadVideoById(url);   
+			        }
 			        console.log(url+" - video id updated")
 			        /* $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=0&showinfo=0&rel=0&version=3&enablejsapi=1&controls=0'); */
 			      }
