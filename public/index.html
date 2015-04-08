@@ -157,6 +157,7 @@
 			      var player;
 			      var start = true;
 			      function onYouTubeIframeAPIReady(url,playlist) {
+			      	console.log(url+'-video data-'+playlist);
 			        if(start){
 					     player = new YT.Player('player', {
 				          height: '350',
