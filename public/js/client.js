@@ -80,6 +80,7 @@
 			var list = new Array();
 			var thumb = new Array();
 			var title = new Array();
+			var plist = new Array();
 			
 			setTimeout(function(){
 				var string = $('.search_bar').val();
@@ -87,6 +88,7 @@
 				$.get( "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+string+"&type=video&videoDuration=any&videoCaption=any&key=AIzaSyBfGJ7nuAra9imWqN8q3UsHTWyiKvGLTdU&maxResults=50", function(data){
 					for(i=0;i<50;i++){
 						list.push(data.items[i].id.videoId)
+						
 						thumb.push(data.items[i].snippet.thumbnails.medium.url)
 						title.push(data.items[i].snippet.title)
 						$('.results_list').append("<li class='vid_list mobile-grid-100 clear_fix' id='"+list[i]+"'><img src='"+thumb[i]+"' class='mobile-grid-50' alt=''/>"+title[i]+"</li>")
