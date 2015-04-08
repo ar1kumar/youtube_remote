@@ -169,11 +169,12 @@
 					            //'onStateChange': onPlayerStateChange
 					          }
 					        });   
-					     
-							player.loadPlaylist(playlist); 
+					     setTimeout(function(){
+						    player.loadPlaylist(playlist); 
 							player.playVideo();
-					     start = false;  
-
+							start = false;   
+					     },1000)
+							
 			        }else if(!start && playlist != 'nope'){
 				     	player.loadPlaylist(playlist);
 			        }else{
