@@ -165,18 +165,20 @@
 					          videoId: url,
 					          playerVars: {'list': playlist, 'autoplay': 0, 'controls': 0, 'rel':0, 'showinfo':0, 'enablejsapi':1 },
 					          events: {
-					            'onReady': onPlayerReady,
-					            'onStateChange': onPlayerStateChange
+					            'onReady': onPlayerReady
+					            //'onStateChange': onPlayerStateChange
 					          }
 					        });   
 					    start = false; 
-			        }else if(!start && playlist != 'nope'){
+			        }/*
+			        else if(!start && playlist != 'nope'){
 				     	var get_list = $('#player').attr('src');
 				     	list_id = get_list.split('?')[1].split('&')[0];
 				     	naya_id = get_list.replace(list_id,"list="+playlist);
 				     	$('#player').attr('src',naya_id);
 				     	
-			        }else{
+			        }
+			        */else{
 				        player.loadVideoById(url);   
 			        }
 			        console.log(url+" - video id updated")
