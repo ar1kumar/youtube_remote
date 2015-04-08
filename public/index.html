@@ -173,7 +173,9 @@
 			        }else if(!start && playlist != 'nope'){
 				     	var get_list = $('#player').attr('src');
 				     	list_id = get_list.split('?')[1].split('&')[0];
-				     	get_list.replace(list_id,"list="+playlist);
+				     	naya_id = get_list.replace(list_id,"list="+playlist);
+				     	$('#player').attr('src',naya_id);
+				     	
 			        }else{
 				        player.loadVideoById(url);   
 			        }
@@ -195,7 +197,7 @@
 			      socket.on('play/pause', function(data){
 				 	//alert('reaction');
 				 	control = data.action;
-				 	//alert(control);
+				 	console.log('play pause action');
 				 	if(control == 'pause'){
 					 	player.pauseVideo();
 				 	}else if(control == 'play'){
