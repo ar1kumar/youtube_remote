@@ -165,8 +165,8 @@
 					          videoId: url,
 					          playerVars: {'list': playlist, 'autoplay': 0, 'controls': 0, 'rel':0, 'showinfo':0, 'enablejsapi':1 },
 					          events: {
-					            'onReady': onPlayerReady
-					            //'onStateChange': onPlayerStateChange
+					            'onReady': onPlayerReady,
+					            'onStateChange': onPlayerStateChange
 					          }
 					        });   
 					    start = false; 
@@ -188,7 +188,7 @@
 			      }
 			      
 			     function onPlayerStateChange(){
-				     
+				    player.playVideo();  
 			     }
 			      
 			      //actions coming from remote URL
