@@ -163,14 +163,15 @@
 					          height: '350',
 					          width: '640',
 					          videoId: url,
-					          playerVars: { 'autoplay': 0, 'controls': 0, 'rel':0, 'showinfo':0, 'enablejsapi':1 },
+					          playerVars: {'list':'nope', 'autoplay': 1, 'controls': 0, 'rel':0, 'showinfo':0, 'enablejsapi':1 },
 					          events: {
-					            'onReady': onPlayerReady
+					            //'onReady': onPlayerReady
 					            //'onStateChange': onPlayerStateChange
 					          }
 					        });   
 					     if(playlist != 'nope'){
 							player.loadPlaylist(playlist); 
+							//player.playVideo();
 					     }
 					     start = false;  
 
