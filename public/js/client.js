@@ -96,6 +96,7 @@
 		})
 		
 		$(document).on('click', 'ul li', function(e) { 
+			$('.active').removeClass('active');
 			get_video = $(this).attr('id');
 			console.log(get_video+" -video ID");
 			data = {
@@ -103,6 +104,7 @@
 				video : get_video
 			}
 			socket.emit('update_video', data);	
+			$(this).addClass('active');
 		});
 		
 	}

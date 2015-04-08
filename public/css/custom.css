@@ -107,7 +107,7 @@ html,body{
 }
 
 .search_btn{
-	height: 30px;
+	height: 32px;
 }
 
 .search_results{
@@ -117,6 +117,10 @@ html,body{
 
 .vid_list{
 	z-index: 10;
+}
+
+.active{
+	background: rgb(216, 147, 126);
 }
 
 
