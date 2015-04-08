@@ -169,8 +169,14 @@ function randomString(len) {
 				
 				socket.on('new_video', function(data){
 				 	new_video = data.video;
-				 	//console.log(new_video+" -new video")
-				 	onYouTubeIframeAPIReady(new_video,"nope");
+				 	new_list = data.list;
+				 	console.log(new_video+" -new video info-" +new_list)
+				 	if(new_list == undefined){
+					 	new_list = "nope";
+				 	}else{
+					 	new_list = data.list;
+				 	}
+				 	onYouTubeIframeAPIReady(new_video, new_list);
 				});
 		
 			})

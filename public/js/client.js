@@ -85,13 +85,13 @@
 			setTimeout(function(){
 				var string = $('.search_bar').val();
 				//https://www.googleapis.com/youtube/v3/search?part=snippet&q="+string+"&type=video&videoDuration=any&videoCaption=any&key=AIzaSyBfGJ7nuAra9imWqN8q3UsHTWyiKvGLTdU&maxResults=50
-				$.get( "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+string+"&type=video&videoDuration=any&videoCaption=any&key=AIzaSyBfGJ7nuAra9imWqN8q3UsHTWyiKvGLTdU&maxResults=50", function(data){
+				$.get( "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+string+"&type=video,playlist&key=AIzaSyBfGJ7nuAra9imWqN8q3UsHTWyiKvGLTdU&maxResults=50", function(data){
 					for(i=0;i<50;i++){
 						list.push(data.items[i].id.videoId)
-						
+						plist.push(data.items[i].id.playlistId)
 						thumb.push(data.items[i].snippet.thumbnails.medium.url)
 						title.push(data.items[i].snippet.title)
-						$('.results_list').append("<li class='vid_list mobile-grid-100 clear_fix' id='"+list[i]+"'><img src='"+thumb[i]+"' class='mobile-grid-50' alt=''/>"+title[i]+"</li>")
+						$('.results_list').append("<li class='vid_list mobile-grid-100 clear_fix' id='"+list[i]+"' data-id='"+plist[i]+"' ><img src='"+thumb[i]+"' class='mobile-grid-50' alt=''/>"+title[i]+"</li>")
 					}
 				});
 			},1000)
@@ -100,10 +100,12 @@
 		$(document).on('click', 'ul li', function(e) { 
 			$('.active').removeClass('active');
 			get_video = $(this).attr('id');
-			console.log(get_video+" -video ID");
+			get_list = $(this).attr('data-id');
+			console.log(get_video+" -video ID, list ID- "+get_list);
 			data = {
 				roomId : roomId,
-				video : get_video
+				video : get_video,
+				list : get_list
 			}
 			socket.emit('update_video', data);	
 			$(this).addClass('active');
