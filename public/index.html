@@ -169,8 +169,10 @@
 				          }
 				        });   
 				        start = false;
+			        }else if(playlist != 'nope'){
+				     	player.loadPlaylist(playlist);
 			        }else{
-				     	player.loadVideoById(url);   
+				        player.loadVideoById(url);   
 			        }
 			        console.log(url+" - video id updated")
 			        /* $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=0&showinfo=0&rel=0&version=3&enablejsapi=1&controls=0'); */
