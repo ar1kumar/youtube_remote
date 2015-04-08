@@ -159,8 +159,7 @@
 			      function onYouTubeIframeAPIReady(url,playlist) {
 			      	console.log(url+'-video data-'+playlist);
 			        if(start){
-					     if(playlist == 'nope'){
-							player = new YT.Player('player', {
+					     player = new YT.Player('player', {
 					          height: '350',
 					          width: '640',
 					          videoId: url,
@@ -170,19 +169,8 @@
 					            //'onStateChange': onPlayerStateChange
 					          }
 					        });   
-					        
-					     }else{
-						     player = new YT.Player('player', {
-					          height: '350',
-					          width: '640',
-					          //videoId: url,
-					          playerVars: {'autoplay': 1, 'controls': 0, 'rel':0, 'showinfo':0, 'enablejsapi':1 },
-					          events: {
-					            //'onReady': onPlayerReady
-					            //'onStateChange': onPlayerStateChange
-					          }
-					        });
-					        player.loadPlaylist(playlist);
+					     if(playlist != 'nope'){
+							player.loadPlaylist(playlist); 
 					     }
 					     start = false;  
 
