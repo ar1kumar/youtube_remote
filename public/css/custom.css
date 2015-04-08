@@ -111,8 +111,9 @@ html,body{
 }
 
 .search_results{
-	height: 400px;
-	overflow-y: scroll;
+	height: 100%;
+  overflow-y: scroll;
+  position: absolute;
 }
 
 .vid_list{
