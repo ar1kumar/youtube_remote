@@ -91,7 +91,7 @@ html,body{
 }
 
 .speaker_right{
-	right: -10%;
+	right: 0;
 	position: absolute;
 	z-index: 0;
 	bottom: 0;
