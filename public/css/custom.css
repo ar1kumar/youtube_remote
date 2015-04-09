@@ -10,6 +10,12 @@ html,body{
 	padding: 0 !important;
 }
 
+.clear_left{
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding: 0 !important;
+}
+
 .container{
 	height: 100%;
 	width: 100%;
@@ -125,6 +131,7 @@ html,body{
 
 .vid_list{
 	z-index: 10;
+	margin-top: 3%;
 }
 
 .active{
