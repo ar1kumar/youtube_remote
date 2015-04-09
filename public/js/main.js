@@ -85,7 +85,7 @@ function randomString(len) {
 		  function send_video_info(){
 			  	var video_id = $('#video_info').attr('id');
 			  	$.get("https://gdata.youtube.com/feeds/api/videos/"+video_id+"?v=2&alt=jsonc",function(data){
-				  //console.log(data.data.title)
+				  console.log('data from YT API-'+data.data.title)
 				  
 				  data = {
 						roomId : roomId,
@@ -115,8 +115,8 @@ function randomString(len) {
 					          videoId: url,
 					          playerVars: {'list': playlist, 'autoplay': 0, 'controls': 0, 'rel':0, 'showinfo':0, 'enablejsapi':1 },
 					          events: {
-					            'onReady': onPlayerReady
-					            //'onStateChange': onPlayerStateChange
+					            'onReady': onPlayerReady,
+					            'onStateChange': onPlayerStateChange
 					          }
 					        });   
 					    start = false; 
