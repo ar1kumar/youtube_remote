@@ -82,11 +82,18 @@ function randomString(len) {
 			  return url.match(regExp)&&url.match(regExp).length>0;
 		  }
 		    
-/*
-			function control(){
-			 	socket.emit('play/pause', data);
-			}
-*/
+		  function send_video_info(){
+			  	var video_id = $('#video_info').attr('id');
+			  	$.get("https://gdata.youtube.com/feeds/api/videos/"video_id+"?v=2&alt=jsonc",function(data){
+				  //console.log(data.data.title)
+				  
+				  data = {
+						roomId : roomId,
+						video_info : data.data.title
+					}
+					socket.emit('video_info', data);	
+				})
+		  }
 			 
 				//2. This code loads the IFrame Player API code asynchronously.
 			      var tag = document.createElement('script');
@@ -113,6 +120,9 @@ function randomString(len) {
 					          }
 					        });   
 					    start = false; 
+					    
+					    $('#video_info').attr('id',url);
+					    
 			        }/*
 			        else if(!start && playlist != 'nope'){
 				     	var get_list = $('#player').attr('src');
@@ -124,6 +134,8 @@ function randomString(len) {
 			        */else{
 				        //player.loadVideoById(url);   
 				        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=0&controls=0&rel=0&showinfo=0&enablejsapi=1');
+				        
+				        $('#video_info').attr('id',url);
 			        }
 			        console.log(url+" - video id updated")
 			      }
@@ -133,10 +145,12 @@ function randomString(len) {
 			        //event.target.playVideo();
 			        //do whatever when the player is ready
 			        player.playVideo();
+			        send_video_info();
 			      }
 			      
 			     function onPlayerStateChange(){
 				    player.playVideo();  
+				    send_video_info();
 			     }
 			      
 			      //actions coming from remote URL

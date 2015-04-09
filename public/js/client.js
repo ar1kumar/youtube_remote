@@ -111,6 +111,13 @@
 			$(this).addClass('active');
 		});
 		
+		//Get the currently playing video info
+			socket.on('video_title_update', function(data){
+			 	title = data.video_info;
+			 	console.log('Now Playing- '+title);
+			 	$('.title').html('Now Playing - '+title);
+			});
+		
 	}
 	
 	

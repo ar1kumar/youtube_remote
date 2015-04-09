@@ -53,5 +53,10 @@ io.sockets.on('connection', function (socket) {
 		room = data.roomId;
 		socket.broadcast.to(room).emit('new_video', data);
 	});
+	
+	socket.on('video_info', function(data){
+		room = data.roomId;
+		socket.broadcast.to(room).emit('video_title_update', data);
+	});
 		
 });
