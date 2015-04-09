@@ -115,7 +115,7 @@
 			socket.on('video_title_update', function(data){
 			 	title = data.video_info;
 			 	console.log('Now Playing- '+title);
-			 	$('.title').html('Now Playing - '+title);
+			 	$('.now_playing').html('Now Playing - '+title);
 			});
 		
 	}
