@@ -82,9 +82,9 @@ function randomString(len) {
 			  return url.match(regExp)&&url.match(regExp).length>0;
 		  }
 		    
-		  function send_video_info(){
+		  function send_video_info(url){
 			  	var video_id = $('#video_info').attr('id');
-			  	$.get("https://gdata.youtube.com/feeds/api/videos/"+video_id+"?v=2&alt=jsonc",function(data){
+			  	$.get("https://gdata.youtube.com/feeds/api/videos/"+url+"?v=2&alt=jsonc",function(data){
 				  console.log('data from YT API-'+data.data.title)
 				  
 				  data = {
@@ -122,6 +122,7 @@ function randomString(len) {
 					    start = false; 
 					    
 					    $('#video_info').attr('id',url);
+					    send_video_info(url);
 					    
 			        }/*
 			        else if(!start && playlist != 'nope'){
@@ -136,6 +137,7 @@ function randomString(len) {
 				        $('#player').attr('src','https://www.youtube.com/embed/'+url+'?list='+playlist+'&autoplay=0&controls=0&rel=0&showinfo=0&enablejsapi=1');
 				        
 				        $('#video_info').attr('id',url);
+				        send_video_info(url);
 			        }
 			        console.log(url+" - video id updated")
 			      }
@@ -145,12 +147,12 @@ function randomString(len) {
 			        //event.target.playVideo();
 			        //do whatever when the player is ready
 			        player.playVideo();
-			        send_video_info();
+			        //send_video_info();
 			      }
 			      
 			     function onPlayerStateChange(){
 				    player.playVideo();  
-				    send_video_info();
+				    //send_video_info();
 			     }
 			      
 			      //actions coming from remote URL
