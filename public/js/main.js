@@ -84,7 +84,7 @@ function randomString(len) {
 		    
 		  function send_video_info(){
 			  	var video_id = $('#video_info').attr('id');
-			  	$.get("https://gdata.youtube.com/feeds/api/videos/"video_id+"?v=2&alt=jsonc",function(data){
+			  	$.get("https://gdata.youtube.com/feeds/api/videos/"+video_id+"?v=2&alt=jsonc",function(data){
 				  //console.log(data.data.title)
 				  
 				  data = {
