@@ -130,12 +130,16 @@ html,body{
 }
 
 .vid_list{
-	z-index: 10;
-	margin-top: 3%;
+	  z-index: 10;
+	  border: 1px solid rgb(146, 130, 79);
+	  margin-top: 3%;
+	  background: rgb(255, 253, 253);
+	  text-align: left;
+	  font-size: 1.2em;
 }
 
 .active{
-	background: rgb(216, 147, 126);
+	background: rgb(172, 195, 183);
 }
 
 

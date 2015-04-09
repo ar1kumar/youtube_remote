@@ -91,7 +91,7 @@
 						plist.push(data.items[i].id.playlistId)
 						thumb.push(data.items[i].snippet.thumbnails.medium.url)
 						title.push(data.items[i].snippet.title)
-						$('.results_list').append("<li class='vid_list mobile-grid-100 clear_left' id='"+list[i]+"' data-id='"+plist[i]+"' ><img src='"+thumb[i]+"' class='mobile-grid-50 clear_left' alt=''/>"+title[i]+"</li>")
+						$('.results_list').append("<li class='vid_list mobile-grid-100 clear_left' id='"+list[i]+"' data-id='"+plist[i]+"' ><img src='"+thumb[i]+"' class='mobile-grid-50 clear_left' alt=''/><p class='mobile-grid-50 clear_left'>"+title[i]+"</p></li>")
 					}
 				});
 			},1000)
