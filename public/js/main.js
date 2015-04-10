@@ -33,6 +33,12 @@ function randomString(len) {
 			console.log('mobile-link- '+baseURL+'m/'+roomId);
 			$('#link_bar').html('Remote URL- '+baseURL+'m/'+roomId)
 			
+			/* toggle night mode on - switch */
+			// Switch toggle
+			$('.Switch').click(function() {
+				$(this).toggleClass('On').toggleClass('Off');
+			});
+			
 			/* embed video from input link */
 			$('#submit').click(function(){
 				get_vid = $('#vid_link').val();
