@@ -19,11 +19,18 @@ html,body{
 .container{
 	height: 100%;
 	width: 100%;
-	/* background: url('../img/grad.jpg')no-repeat; */
-	background: rgb(102,198,194);
+	/* background: rgb(102,198,194); */
 	-webkit-background-size: cover;
 	background-size: cover;
 	position: relative;
+}
+
+.day{
+	background: rgb(102,198,194);
+}
+
+.night{
+	background: #000;
 }
 
 .container2{

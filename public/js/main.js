@@ -38,6 +38,7 @@ function randomString(len) {
 			$('.Switch').click(function() {
 				$(this).toggleClass('On').toggleClass('Off');
 				var get_action = $(this).attr('class');
+				$(this).toggleClass('day').toggleClass('night');
 				console.log(get_action+" - Night mode")
 			});
 			
