@@ -1,6 +1,6 @@
 function randomString(len) {
-			    //var chars = "1234567890abcdefghijklmnopqrstuvwxyz";
-			    var chars = "1";
+			    var chars = "1234567890abcdefghijklmnopqrstuvwxyz";
+			    //var chars = "1";
 			    var string_length = len;
 			    var randomstring = '';
 			    for (var i = 0; i < string_length; i++) {
@@ -17,8 +17,8 @@ function randomString(len) {
 			var baseURL = "https://leanback.herokuapp.com/";
 			var roomURL = baseURL+"mobile/"+roomId;	
 			var socket = io.connect(baseURL);
-			//var roomId = randomString(4);
-			var roomId = randomString(1);
+			var roomId = randomString(4);
+			//var roomId = randomString(1);
 			      
 			//start a room
 			//generate url for mobile to join room
